@@ -14,3 +14,5 @@ mkdir build
 
 ./bootstrap
 FFLAGS="-std=legacy  -fallow-argument-mismatch" FCFLAGS="-std=legacy  -fallow-argument-mismatch" CXX=mpicxx CC=mpicc F77=mpifort LDFLAGS=" -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -Wl,--no-as-needed -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lmkl_blacs_openmpi_lp64 -lgomp -lpthread -lm -ldl" ./configure --enable-mpi=openmpi --prefix=$PWD/build
+make -j
+make install
